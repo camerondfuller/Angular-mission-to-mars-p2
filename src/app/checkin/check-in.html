@@ -1,0 +1,18 @@
+<div class="checkin-page">
+   <div class="checkin-body">
+      <header class="checkin-header">
+         register
+      </header>
+      <div class="checkin-main">
+         <div class="checkin-form">
+            <input type="text" name="name" class="input" ng-class="alert" placeholder="Name" ng-model="colonist.name"/>
+            <input type="text" name="age" class="input" ng-class="alert" placeholder="Age" ng-model="colonist.age" />
+            <select name="jobs" id="jobs" class="input checkin-jobs" ng-class="alert" ng-model="colonist.job_id">
+               <option value="">Select occupation</option>
+               <option value="{{job.id}}" ng-repeat="job in jobs">{{job.name}}</option>
+            </select>
+         </div>
+         <button name="button" class="checkin-btn" ng-click="login($event)">Check in</button>
+      </div>
+   </div>
+</div>
