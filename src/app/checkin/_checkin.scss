@@ -1,17 +1,5 @@
-.checkin-body {
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-   background: black;
-   height: 100vh;
-}
-.checkin-header {
-text-align: center;
-padding:2rem 1rem;
-text-transform: capitalize;
-font-size: 2rem;
-color:white;
-width: 100vw;
+.checkin-page {
+   position: relative;
 }
 .checkin-main {
    display: flex;
@@ -24,34 +12,12 @@ width: 100vw;
 .checkin-form {
    height:50vh;
 }
-.input {
-   width:100%;
-   margin-bottom: 1.5rem;
-   font-size: 1rem;
-   border: none;
-   border-bottom: 1px solid white;
-   color: white;
-   background: transparent;
-   border-radius: 5px;
-   &.alert {
-      animation: alert-pulse .5s ease-in-out infinite;
+.show-validation {
+   input, select, textarea {
+      &.ng-invalid {
+         animation: alert-pulse .25s alternate infinite;
+      }
    }
-}
-.checkin-btn {
-   width:95vw;
-   height:4rem;
-   background: transparent;
-   font-size: 1.5rem;
-   font-family: "Roboto", sans-serif;
-   border:none;
-   color:white;
-}
-input::placeholder {
-   color:red;
-}
-select {
-   appearance:none;
-   text-indent: none;
 }
 @keyframes alert-pulse {
    0% {
@@ -59,5 +25,13 @@ select {
    }
    100% {
       box-shadow: 0 0 30px 5px red;
+   }
+}
+@keyframes checkinEnter {
+   0% {
+      left:-1500px;
+   }
+   100% {
+      left: 0px;
    }
 }

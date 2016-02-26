@@ -1,0 +1,17 @@
+<div class="en-page">
+   <div class="body">
+      <header>
+         <h1>Report Encounters</h1>
+      </header>
+      <div class="main">
+         <div class="en-list">
+            <ul>
+               <li ng-repeat="data in encounters">{{data.date}} {{data.atype}}</br> {{data.action}}</li>
+            </ul>
+         </div>
+         <footer>
+            <button class="btn" ui-sref="report">Report Encounter</button>
+         </footer>
+      </div>
+   </div>
+</div>

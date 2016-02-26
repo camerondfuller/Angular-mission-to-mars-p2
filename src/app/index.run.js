@@ -6,9 +6,14 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log) {
+  function runBlock($log, $rootScope, $state) {
 
-    $log.debug('Run block end!');
+     $rootScope.state = $state;
+
+    $log.debug('Hello you fancy gentleman!');
+    $rootScope.$on('$stateChangeStart', function(event, toState){
+      $rootScope.stateName = toState.name;
+   });
   }
 
 })();

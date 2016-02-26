@@ -34,11 +34,6 @@
          url:'/report',
          templateUrl:'app/report/report.html',
          controller:'ReportController'
-      })
-      .state('filed',{
-         url:'/filed',
-         templateUrl:'app/report/filed.html',
-         controller:'ReportController'
       });
 
     $urlRouterProvider.otherwise('/');

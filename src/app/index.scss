@@ -26,6 +26,26 @@ html, body {
    box-sizing: border-box;
    outline: none;
 }
+header {
+text-align: center;
+padding:2rem 1rem;
+text-transform: capitalize;
+color:white;
+width: 100vw;
+   & h1 {
+      font-size: 2rem;
+   }
+   & p {
+      font-size: 1rem;
+   }
+}
+.body {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   background: black;
+   height: 100vh;
+}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -44,7 +64,115 @@ html, body {
 	justify-content: space-around;
 	flex-direction:column;
 }
+li{
+   list-style-type: none;
+}
+.input {
+   width:100%;
+   margin-bottom: 1.5rem;
+   font-size: 1rem;
+   border: none;
+   border-bottom: 1px solid white;
+   color: white;
+   background: transparent;
+   border-radius: 5px;
+}
+.btn {
+   width:95vw;
+   height:4rem;
+   background: transparent;
+   font-size: 1.5rem;
+   font-family: "Roboto", sans-serif;
+   border:none;
+   color:white;
+}
+.main {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   width: 95vw;
+   height: 80vh;
+   padding: 0 2rem;
+}
+input::placeholder {
+   color:red;
+}
+textarea::placeholder {
+   color:red;
+}
+select {
+   appearance:none;
+   text-indent: none;
+   & option {
+      color:red;
+   }
+}
+[ui-view].ng-enter, [ui-view].ng-leave {
+   position: absolute;
+   top:0;left:0;right:0;
+   transition: all 2s ease;
+}
 
+//ng-____ is the 0%
+[ui-view].ng-enter {
+   .check-in & {
+      transform: scale3d(0,0,0);
+
+   }
+   .encounters & {
+
+   }
+   .report & {
+
+   }
+   .home & {
+   }
+}
+//ng-____-active is the 100%
+[ui-view].ng-enter-active {
+   .check-in & {
+      transform: scale3d(1,1,-100);
+   }
+   .encounters & {
+
+   }
+   .report & {
+
+   }
+   .home & {
+
+   }
+}
+//ng-____ is the 0%
+[ui-view].ng-leave {
+   .check-in & {
+      opacity: 1;
+   }
+   .encounters & {
+      transform: translateX(0);
+   }
+   .report & {
+      transform: translateY(0);
+   }
+   .home & {
+
+   }
+}
+//ng-____-active is the 100%
+[ui-view].ng-leave-active {
+   .check-in & {
+      opacity: 0;
+   }
+   .encounters & {
+      transform: translateX(-100%);
+   }
+   .report & {
+      transform: translateY(-100%);
+   }
+   .home & {
+      
+   }
+}
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

@@ -1,0 +1,30 @@
+<div class="report-main">
+   <div class="body">
+      <header>
+         <h1>Report Encounter</h1>
+         <p>Safty on Mars is your responsibility</p>
+      </header>
+      <div class="main">
+         <form>
+            <select  name="aliens"
+            class="input"
+            ng-class="alert"
+            ng-model="report.atype">
+
+            <option value="">Select alien type</option>
+            <option value="{{alien.type}}" ng-repeat="alien in aliens">{{alien.type}}</option>
+            </select>
+
+            <textarea
+            name="name"
+            class="report-textarea"
+            ng-class="alert"
+            placeholder="Action taken"
+            ng-model="report.action"></textarea>
+         </form>
+         <footer>
+            <button class="btn"                     ng-click="reportEncounter($event)">Submit Report</button>
+         </footer>
+      </div>
+   </div>
+</div>
