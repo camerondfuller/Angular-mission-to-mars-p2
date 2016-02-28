@@ -1,6 +1,6 @@
 {
-  "firebase": "shining-fire-9535",
-  "public": "public",
+  "firebase": "mission-to-mars",
+  "public": "dist",
   "ignore": [
     "firebase.json",
     "**/.*",
