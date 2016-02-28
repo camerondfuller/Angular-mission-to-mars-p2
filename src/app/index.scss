@@ -4,14 +4,16 @@
  */
 // bower:scss
 // endbower
+@import "media";
 @import "checkin/checkin";
 @import "encounters/encounters";
 @import "main/main";
 @import "report/report";
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:100,400,700,100italic,700italic,400italic);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 
 $red-color: #ed4343;
-$red-font: 'Roboto', serif;
+$red-font: 'Roboto', sans-serif;
 
 html, body {
   width:100%;
@@ -43,8 +45,26 @@ width: 100vw;
    display: flex;
    align-items: center;
    flex-direction: column;
-   background: black;
    height: 100vh;
+}
+.go-home {
+   position: absolute;
+   top:15px;
+   left:15px;
+   height:50px;
+   width: 50px;
+   background: linear-gradient(to right, rgba(255,0,0,.8), rgba(255,0,0,.25));
+   border-radius: 50%;
+   text-align: center;
+   text-transform: uppercase;
+   color:rgba(255,255,255, .5);
+
+   & p {
+      position: absolute;
+      top:7px;
+      left:8px;
+      font-size: 12px;
+   }
 }
 .browsehappy {
   margin: 0.2em 0;
@@ -78,13 +98,19 @@ li{
    border-radius: 5px;
 }
 .btn {
-   width:95vw;
+   width:70vw;
    height:4rem;
-   background: transparent;
+   background-color: rgba(200, 200, 200, .3);
+   border-radius: 15px;
    font-size: 1.5rem;
    font-family: "Roboto", sans-serif;
    border:none;
    color:white;
+   text-shadow: 3px 2px rgba(0,0,0,.5);
+
+   @include desktop {
+      width:300px;
+   } ;
 }
 .main {
    display: flex;
@@ -110,43 +136,46 @@ select {
 [ui-view].ng-enter, [ui-view].ng-leave {
    position: absolute;
    top:0;left:0;right:0;
-   transition: all 2s ease;
+   transition: all 1s ease;
 }
 
 //ng-____ is the 0%
 [ui-view].ng-enter {
    .check-in & {
+      transition: all .35s ease;
       transform: scale3d(0,0,0);
 
    }
    .encounters & {
-
+      opacity: 0;
    }
    .report & {
 
    }
    .home & {
+      transform:scale3d(0,0,0);
    }
 }
 //ng-____-active is the 100%
 [ui-view].ng-enter-active {
    .check-in & {
-      transform: scale3d(1,1,-100);
+      transform: scale3d(1,1,1);
    }
    .encounters & {
-
+      opacity: 1;
    }
    .report & {
 
    }
    .home & {
-
+      transform: scale3d(1,1,1);
    }
 }
 //ng-____ is the 0%
 [ui-view].ng-leave {
    .check-in & {
       opacity: 1;
+      transform: scale3d(1,1,1);
    }
    .encounters & {
       transform: translateX(0);
@@ -162,6 +191,7 @@ select {
 [ui-view].ng-leave-active {
    .check-in & {
       opacity: 0;
+      transform: scale3d(0,0,0);
    }
    .encounters & {
       transform: translateX(-100%);
@@ -170,7 +200,7 @@ select {
       transform: translateY(-100%);
    }
    .home & {
-      
+
    }
 }
 /**

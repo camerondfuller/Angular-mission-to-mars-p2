@@ -25,10 +25,14 @@
       console.log(error);
      //   Handle it yourself, jerk!
     });
+
+   $scope.showValidation = false;
     // This is the POST API setup.
     $scope.reportEncounter = function(event) {
        event.preventDefault();
-       console.log($scope.report);
+       if($scope.checkinForm.$invalid) {
+          $scope.showValidation=true;
+       } else {
        $http({
           method:'POST',
           url: REPORT_POST_URL,
@@ -41,7 +45,7 @@
        }, function(error) {
           console.log(error);
        });
-
+    }
     };
 
 

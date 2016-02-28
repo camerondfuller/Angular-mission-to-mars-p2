@@ -1,11 +1,12 @@
 <div class="checkin-page">
    <div class="body">
+      <div class="go-home" ui-sref="home"><p>home</p></div>
       <header>
          <h1>register</h1>
       </header>
       <div class="main">
          <form class="checkin-form" name="checkinForm" ng-class="{'show-validation' : showValidation}">
-            <input type="text" name="name" class="input" placeholder="Name" ng-model="colonist.name" required minlength="3"/>
+            <input type="text" name="name" class="input" placeholder="Name" autofocus="true" ng-model="colonist.name" required minlength="3"/>
             <input type="number" name="age" class="input"  placeholder="Age" ng-model="colonist.age" required/>
             <select name="jobs" class="input" ng-model="colonist.job_id" required>
                <option value="">Select occupation</option>

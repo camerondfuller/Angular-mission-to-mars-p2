@@ -1,12 +1,13 @@
 <div class="en-page">
    <div class="body">
+      <div class="go-home" ui-sref="home"><p>home</p></div>
       <header>
          <h1>Report Encounters</h1>
       </header>
       <div class="main">
          <div class="en-list">
             <ul>
-               <li ng-repeat="data in encounters">{{data.date}} {{data.atype}}</br> {{data.action}}</li>
+               <li ng-repeat="data in encounters | orderBy:'-id'">{{data.date}} {{data.atype}}</br> {{data.action}}</li>
             </ul>
          </div>
          <footer>

@@ -4,13 +4,25 @@
    justify-content: space-around;
    flex-direction: column;
    background-image: url(assets/mars.jpg);
+   background-position: center;
+   background-size: 100vw auto;
+   background-repeat: no-repeat;
+   background-color: black;
    height: 100vh;
+
+   @include desktop {
+      background-size: auto 100vh;
+   };
 
 }
 .title-cont {
    color: white;
    text-align: center;
    text-transform: uppercase;
+   font-family: 'Mars', sans-serif;
+   font-size: 30px;
+   text-shadow: 3px 5px rgba(0,0,0,.4);
+   color: rgba(0,255,0,1);
 }
 .pulse {
   height:75px;
@@ -24,7 +36,7 @@
 
   }
   25% {
-    box-shadow: 0px 0px 10px 20px rgba(0,0,0, .1), 0px 0px 10px 40px rgba(0,0,0,.1),0px 0px 10px 60px rgba(0,0,0,.1), 0px 0px 10px 80px rgba(0,0,0,.1);
+    box-shadow: 0px 0px 10px 20px rgba(150,0,0, .1), 0px 0px 10px 40px rgba(150,0,0,.1),0px 0px 10px 60px rgba(150,0,0,.1), 0px 0px 10px 80px rgba(150,0,0,.1);
   }
   50% {
     box-shadow: 0px 0px 10px 20px rgba(0,0,0, .1), 0px 0px 10px 40px rgba(0,0,0,.1), 0px 0px 10px 60px rgba(0,0,0,.1);

@@ -1,6 +1,16 @@
+.en-page {
+   position: relative;
+   background-image: url(assets/mars.jpg);
+   background-position: center 450px;
+   background-repeat: no-repeat;
+   background-color: black;
+}
 .en-list {
-   background: white;
+   background: transparent;
+   color:white;
    height:50vh;
+   border: 1px solid white;
+   font-weight: 400;
    overflow: scroll;
 }
 footer {

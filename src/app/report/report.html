@@ -1,30 +1,26 @@
 <div class="report-main">
    <div class="body">
+      <div class="go-home" ui-sref="home"><p>home</p></div>
       <header>
          <h1>Report Encounter</h1>
-         <p>Safty on Mars is your responsibility</p>
+         <p>Safety on Mars is your responsibility</p>
       </header>
       <div class="main">
-         <form>
+         <form name="checkinForm" ng-class="{'show-validation' : showValidation}">>
             <select  name="aliens"
             class="input"
             ng-class="alert"
-            ng-model="report.atype">
+            ng-model="report.atype" required>
 
             <option value="">Select alien type</option>
             <option value="{{alien.type}}" ng-repeat="alien in aliens">{{alien.type}}</option>
-            </select>
+         </select>
 
-            <textarea
-            name="name"
-            class="report-textarea"
-            ng-class="alert"
-            placeholder="Action taken"
-            ng-model="report.action"></textarea>
-         </form>
-         <footer>
-            <button class="btn"                     ng-click="reportEncounter($event)">Submit Report</button>
-         </footer>
-      </div>
+         <textarea name="name" class="report-textarea" ng-class="alert" placeholder="Action taken" autofocus="true" ng-model="report.action" required></textarea>
+      </form>
+      <footer>
+         <button class="btn" ng-click="reportEncounter($event)">Submit Report</button>
+      </footer>
    </div>
+</div>
 </div>
