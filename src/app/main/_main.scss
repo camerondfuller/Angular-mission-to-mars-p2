@@ -27,9 +27,10 @@
 .pulse {
   height:75px;
   width:75px;
+  margin:100px;
   background:rgba(0,0,0, 0);
   border-radius: 50%;
-  animation:border-pulse 2s infinite;
+  animation:border-pulse 2s infinite, slide 4s infinite;
 }
 @keyframes border-pulse {
   0% {
@@ -49,3 +50,14 @@
     background:rgba(0,0,0, .5)
   }
 }
+// @keyframes slide {
+//   0% {
+//     transform:translateX(-150px);
+//   }
+//   50% {
+//     transform:translateX(150px);
+//   }
+//   100% {
+//     transform:translateX(-150px);
+//   }
+// }
